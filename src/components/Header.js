@@ -51,8 +51,6 @@ const LogoContainer = styled.div`
 
   .Container-Categories {
     position: absolute;
-    list-style: none;
-
     width: 10rem;
     height: 9rem;
     background: transparent;
@@ -146,7 +144,7 @@ export function Header() {
             </li>
             <li className="Container-Header-SelectItem">
               <a>Categorias</a>
-              <ul className="Container-Categories">
+              <ul className="Container-Categories"> {/* Adicionar os Links aqui.. criar as rotas... */}
                 <li>Todos</li>
                 <li>Favoritos</li>
                 <li>Já vistos</li>
