@@ -24,7 +24,7 @@ const LogoContainer = styled.div`
   > img {
     width: auto;
     height: 48px;
-    filter: contrast(1.2);
+    filter: contrast(1.);
   }
 
   .Container-Header-Menu {
