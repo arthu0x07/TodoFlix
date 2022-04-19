@@ -52,14 +52,17 @@ const LogoContainer = styled.div`
   .Container-Categories {
     position: absolute;
     width: 10rem;
-    height: 9rem;
-    background: transparent;
+    min-height: 9rem;
+    background: #000000;
     display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     color: #ffffff;
+    padding: 0.9rem;
     padding-top: 2rem;
+    padding-bottom: 0;
+    left: -0.8rem;
 
     li {
       margin-bottom: 1rem;
