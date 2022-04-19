@@ -1,18 +1,22 @@
 import styled from "styled-components/macro";
+import IconLikedMovie from "../assets/IconLikedMovie.png";
+import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
 
 const Container = styled.main`
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   min-height: 21rem;
-
+  height: 336px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+
+  margin-top: 3.5rem;
 `;
 
-const ContainerImagem = styled.main`
-  border: 1px solid green;
+const ContainerImagem = styled.div`
+  /* border: 1px solid green; */
 
   width: 425px;
   height: 242px;
@@ -24,11 +28,57 @@ const ContainerImagem = styled.main`
   }
 `;
 
-const ContainerData = styled.main`
-  width: 425px;
-  height: 242px;
+const ContainerData = styled.div`
+  /* border: 1px solid blue; */
 
-  border: 1px solid blue;
+  width: 445px;
+  /* height: 282px; */
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-left: 2rem;
+`;
+
+const LikedMovieItem = styled.img`
+  margin-bottom: 10px;
+`;
+
+const SubTitleMovie = styled.h3`
+  margin-bottom: 10px;
+
+  font-size: 16px;
+`;
+
+const TitleMovie = styled.h2`
+  margin-bottom: 10px;
+
+  font-size: 30px;
+`;
+
+const OverviewMovie = styled.p`
+  margin-bottom: 10px;
+  font-size: 14px;
+  height: auto;
+  max-height: 76px;
+  overflow: hidden;
+
+  transition: all ease 1.3s;
+
+  :hover {
+    transition: all ease 1.3s;
+
+    max-height: 1000px;
+  }
+`;
+
+const ContainerNotes = styled.div`
+  display: flex;
+  font-size: 14px;
 `;
 
 export function MainBanner(props) {
@@ -45,28 +95,14 @@ export function MainBanner(props) {
       </ContainerImagem>
 
       <ContainerData>
-        {/* 
-            Icon - Add in Final Array
-            Seção do filme... Visto recentemente? - Add in Final Array
-            Titulo - .title
-            Descrição - .overview
-            Quantidade de estrelas / Likes... - 8.4 -> Usar isso aqui na hora de implementar as estrelas, pois a quantidade de likes vai ter de funcionar com esses valores e com os valores que o usuário adicionar, sendo assim: Fazer uma função que recebe o tipo de input da quantidade de estrelas, diferenciando a atribuição automática vindo da API e a atribuição vindo manualmente pelo usuário.
-        */}
+        <LikedMovieItem src={IconLikedMovie} />
+        <SubTitleMovie>Visto recentemente</SubTitleMovie>
+        <TitleMovie>{DataMovie.title}</TitleMovie>
+        <OverviewMovie>{DataMovie.overview}</OverviewMovie>
 
-        <img />
-        <h3>Visto Recentemente</h3>
-        <h2>Capitão Fantástico</h2>
-        <p>
-          Nas florestas do estado de Washington, um pai cria seus seis filhos
-          longe da civilização, em uma rígida rotina de aventuras. Ele é forçado
-          a deixar o isolamento e leva sua família para encarar o mundo,
-          desafiando sua ideia do que significa ser pai.
-        </p>
-
-        <div>
-          <p>4/5</p>
-          <img src={} />
-        </div>
+        <ContainerNotes>
+          <p>4/5</p> <img src={IconNoteMovieLike} />
+        </ContainerNotes>
       </ContainerData>
     </Container>
   );
