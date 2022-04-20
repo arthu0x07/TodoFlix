@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
         height: 100vh;
         max-height: 100vh;
 
-        padding: 0 2rem;
+        padding: 0 3.5rem;
     }
 `;
 

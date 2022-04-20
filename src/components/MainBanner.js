@@ -41,7 +41,7 @@ const ContainerData = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 
-  margin-left: 2rem;
+  margin-left: 3rem;
 `;
 
 const LikedMovieItem = styled.img`
@@ -79,6 +79,14 @@ const OverviewMovie = styled.p`
 const ContainerNotes = styled.div`
   display: flex;
   font-size: 14px;
+  justify-content: space-between;
+  width: 40px;
+  align-items: center;
+
+  > img {
+    position: relative;
+    top: -2px;
+  }
 `;
 
 export function MainBanner(props) {
