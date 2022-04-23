@@ -1,17 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
 import { MainBanner } from "../../components/MainBanner";
 import { MoviesCarrousel } from "../../components/MoviesCarrousel";
+import { MoviesContext } from "../../components/context/MoviesContext";
 
 import { api } from "../../services/api/api";
 import { API_KEY } from "../../services/api/APY_KEY";
 import { SortNumber } from "../../utils/RandomNumber";
 
 export function Home() {
+  const MovieDataContext = useContext(MoviesContext);
   const [DataFilms, setDataFilms] = useState();
   const [SelectedBannerMovie, setSelectedBannerMovie] = useState();
+
+  console.log(MovieDataContext); // Context
 
   useEffect(() => {
     async function FetchData() {

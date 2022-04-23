@@ -4,15 +4,16 @@ import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
 
 const Container = styled.div`
   color: #ffffff;
-  border: 1px solid whitesmoke;
 
   width: 260px;
-  height: 240px;
+  height: 260px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  overflow: hidden;
 
   > img {
     width: 100%;
@@ -25,36 +26,51 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
+    min-height: 30px;
 
     h3 {
       font-size: 16px;
     }
 
-    > div{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+    > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
 
-        > img{
-            position: relative;
-            top: -2px;
-        }
+      > img {
+        position: relative;
+        top: -3px;
+        margin-left: 4px;
+      }
     }
   }
 `;
 
+const Overview = styled.p`
+  font-size: 12px;
+  margin-top: 10px;
+`;
+
 export function CardMovie({ ItemMovie }) {
-  console.log(ItemMovie.title);
+  function FormatTexts(title, Maxlimit = 18) {
+    let limit = Maxlimit;
+    let overlimit = title.length > limit;
+    let dotOrEmpty = overlimit ? "..." : "";
+
+    return title.substring(0, limit) + dotOrEmpty;
+  }
 
   return (
     <Container className="Card-Container">
       <img src={`https://image.tmdb.org/t/p/w500/${ItemMovie.backdrop_path}`} />
       <div>
-        <h3>Movie Title</h3>
+        <h3>{FormatTexts(ItemMovie.title)}</h3>
         <div>
           <p>4/5</p> <img src={IconNoteMovieLike} />
         </div>
       </div>
+      <Overview>{FormatTexts(ItemMovie.overview, 150)}</Overview>
     </Container>
   );
 }

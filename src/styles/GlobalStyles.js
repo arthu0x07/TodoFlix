@@ -28,9 +28,8 @@ const GlobalStyles = createGlobalStyle`
 
     body{
         background-color: #000000;
-        height: 100vh;
-        max-height: 100vh;
-
+        min-height: 100vh;
+        overflow-y: visible;
         padding: 0 3.5rem;
     }
 `;
