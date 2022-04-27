@@ -97,8 +97,6 @@ export function MoviesCarrousel({ DataFilms }) {
     autoPlaySpeed: 2000,
   };
 
-  console.log(DataFilms);
-
   return (
     <Container>
       <h2>Destaques</h2>

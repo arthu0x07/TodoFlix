@@ -23,7 +23,9 @@ export function AlreadySeen() {
       <ContainerCards title="Já vistos">
         {(DataFilms != null) | (DataFilms != undefined) &&
           DataFilms.map((Movie) => {
-            return <CardMovie ItemMovie={Movie} />;
+            if (Movie.already_seen == true) {
+              return <CardMovie ItemMovie={Movie} />;
+            }
           })}
       </ContainerCards>
     </>

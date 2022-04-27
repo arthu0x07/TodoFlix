@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 import LogoHeaderTodoFlix from "../assets/LogoHeader-TodoFlix.png";
 import SetaMenuCategorias from "../assets/SetaMenuCategorias.png";
@@ -34,6 +35,16 @@ const LogoContainer = styled.div`
       align-items: center;
 
       font-weight: bold;
+    }
+
+    a {
+      opacity: 0.8;
+      transition: opacity ease 0.3s;
+
+      :hover {
+        opacity: 1;
+        transition: opacity ease 0.3s;
+      }
     }
   }
 
@@ -161,17 +172,23 @@ export function Header() {
         <nav className="Container-Header-Menu">
           <ul>
             <li>
-              <a href="#">Início</a>
+              <Link to="/">Inicio</Link>
             </li>
             <li className="Container-Header-SelectItem">
               <a>Categorias</a>
               <ul className="Container-Categories">
-                {" "}
-                {/* Adicionar os Links aqui.. criar as rotas... */}
-                <li>Todos</li>
-                <li>Favoritos</li>
-                <li>Já vistos</li>
-                <li>Adicionados</li>
+                <li>
+                  <Link to="/todos">Todos</Link>
+                </li>
+                <li>
+                  <Link to="/favoritos">Favoritos</Link>
+                </li>
+                <li>
+                  <Link to="/vistos">Já Vistos</Link>
+                </li>
+                <li>
+                  <Link to="/adicionados">Adicionados</Link>
+                </li>
               </ul>
             </li>
           </ul>
@@ -191,3 +208,6 @@ export function Header() {
     </Container>
   );
 }
+
+
+

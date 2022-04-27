@@ -17,10 +17,10 @@ export function App() {
         <GlobalStyles />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="liked" element={<Likeds />} />
-          <Route path="seen" element={<AlreadySeen />} />
-          <Route path="added" element={<Added />} />
-          <Route path="all" element={<AllMovies />} />
+          <Route path="favoritos" element={<Likeds />} />
+          <Route path="vistos" element={<AlreadySeen />} />
+          <Route path="adicionados" element={<Added />} />
+          <Route path="todos" element={<AllMovies />} />
         </Routes>
       </MoviesContextProvider>
     </BrowserRouter>

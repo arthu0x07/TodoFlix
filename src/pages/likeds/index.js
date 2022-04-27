@@ -23,7 +23,9 @@ export function Likeds() {
       <ContainerCards title="Curtidos">
         {(DataFilms != null) | (DataFilms != undefined) &&
           DataFilms.map((Movie) => {
-            return <CardMovie ItemMovie={Movie} />;
+            if(Movie.user_liked == true){
+              return <CardMovie ItemMovie={Movie} />;
+            }
           })}
       </ContainerCards>
     </>

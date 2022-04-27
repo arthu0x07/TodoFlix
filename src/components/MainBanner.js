@@ -1,4 +1,8 @@
 import styled from "styled-components/macro";
+import { useContext } from "react";
+
+import { MoviesContext } from "./context/MoviesContext";
+
 import IconLikedMovie from "../assets/IconLikedMovie.png";
 import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
 
@@ -46,6 +50,8 @@ const ContainerData = styled.div`
 
 const LikedMovieItem = styled.img`
   margin-bottom: 10px;
+
+  opacity: ${({ isFav }) => (isFav ? 1 : 0.2)};
 `;
 
 const SubTitleMovie = styled.h3`
@@ -89,23 +95,24 @@ const ContainerNotes = styled.div`
   }
 `;
 
-  // Props Estão chegando undefined...
-
 export function MainBanner(props) {
   const DataBannerMovie = props.SelectedBannerMovie;
+  const setFavMovie = useContext(MoviesContext);
 
   return (
     <Container>
       <ContainerImagem>
-        {/* <img
-          src={`https://image.tmdb.org/t/p/w500/${DataBannerMovie.backdrop_path}`}
-        /> */}
-
         <img src={DataBannerMovie.static_path} />
       </ContainerImagem>
 
       <ContainerData>
-        <LikedMovieItem src={IconLikedMovie} />
+        <LikedMovieItem
+          src={IconLikedMovie}
+          onClick={() => {
+            setFavMovie(DataBannerMovie.id);
+          }}
+          isFav={DataBannerMovie.user_liked}
+        />
         <SubTitleMovie>Visto recentemente</SubTitleMovie>
         <TitleMovie>{DataBannerMovie.title}</TitleMovie>
         <OverviewMovie>{DataBannerMovie.overview}</OverviewMovie>
@@ -117,3 +124,6 @@ export function MainBanner(props) {
     </Container>
   );
 }
+
+// Puxar o contexto, atribuir a função no botão de curtido...
+// Passar a props do ID do filme pelo seu index...

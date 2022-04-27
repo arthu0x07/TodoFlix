@@ -23,7 +23,9 @@ export function Added() {
       <ContainerCards title="Adicionados Recentemente">
         {(DataFilms != null) | (DataFilms != undefined) &&
           DataFilms.map((Movie) => {
-            return <CardMovie ItemMovie={Movie} />;
+            if (Movie.recently_added == true) {
+              return <CardMovie ItemMovie={Movie} />;
+            }
           })}
       </ContainerCards>
     </>

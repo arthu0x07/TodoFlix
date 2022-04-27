@@ -17,17 +17,6 @@ export function Home() {
       setDataFilms(MovieDataContext.DataContextMovies);
   }, []);
 
-  // useEffect(() => {
-  //   async function FetchData() {
-  //     let response = await api.get(
-  //       `movie/top_rated?api_key=${API_KEY}&with_genres=28&language=pt-BR`
-  //     );
-
-  //     setDataFilms(response.data.results); // Vamos ter que percorrer esse array no futuro para criar um novo array no qual os filmes terão as opções de estar favoritados ou não...
-  //   }
-
-  //   FetchData();
-  // }, []);
 
   useEffect(() => {
     if (DataFilms != undefined || DataFilms != null) {

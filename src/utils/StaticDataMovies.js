@@ -4,6 +4,10 @@ import SpiderManIntoSpiderVerse from "../assets/StaticMovies/SpiderManIntoSpider
 import SonhoDeLiberdade from "../assets/StaticMovies/SonhoDeLiberdade.png";
 import QueHorasElaVolta from "../assets/StaticMovies/QueHorasElaVolta.png";
 
+import AFugaDasGalinhas from "../assets/StaticMovies/AFugaDasGalinhas.jpeg";
+import RocketMan from "../assets/StaticMovies/RocketMan.jpeg";
+import AmarElo from "../assets/StaticMovies/AmarElo.jpeg";
+
 export const StaticDataMovies = [
   {
     id: 1,
@@ -16,6 +20,8 @@ export const StaticDataMovies = [
 
     vote_average: 8.4,
     user_liked: false,
+    already_seen: false,
+    recently_added: false,
   },
 
   {
@@ -29,6 +35,8 @@ export const StaticDataMovies = [
 
     vote_average: 8.4,
     user_liked: false,
+    already_seen: false,
+    recently_added: false,
   },
 
   {
@@ -41,7 +49,9 @@ export const StaticDataMovies = [
     backdrop_path: "",
 
     vote_average: 4.4,
-    user_liked: false,
+    user_liked: true,
+    already_seen: true,
+    recently_added: false,
   },
 
   {
@@ -55,6 +65,8 @@ export const StaticDataMovies = [
 
     vote_average: 4.4,
     user_liked: false,
+    already_seen: false,
+    recently_added: false,
   },
 
   {
@@ -68,5 +80,49 @@ export const StaticDataMovies = [
 
     vote_average: 4.4,
     user_liked: false,
+    already_seen: false,
+    recently_added: false,
+  },
+
+  {
+    id: 6,
+    title: "A Fuga das Galinhas",
+    overview:
+      "O galo Rocky e a galinha Ginger querem ajudar todas as outras galinhas a fugirem da granja onde vivem em cativeiro.",
+    static_path: AFugaDasGalinhas,
+    backdrop_path: "",
+
+    vote_average: 4.4,
+    user_liked: false,
+    already_seen: false,
+    recently_added: false,
+  },
+
+  {
+    id: 7,
+    title: "RocketMan",
+    overview:
+      "Em reabilitação, Elton John relembra suas origens humildes, as músicas atemporais e os momentos de inspiração e excesso. Baseado em sua verdadeira história.",
+    static_path: RocketMan,
+    backdrop_path: "",
+
+    vote_average: 4.4,
+    user_liked: false,
+    already_seen: true,
+    recently_added: false,
+  },
+
+  {
+    id: 8,
+    title: "AmarElo",
+    overview:
+      "Nos bastidores do show no Theatro Municipal de São Paulo, o rapper e ativista Emicida celebra o grande legado da cultura negra brasileira.",
+    static_path: AmarElo,
+    backdrop_path: "",
+
+    vote_average: 4.4,
+    user_liked: false,
+    already_seen: true,
+    recently_added: true, // True apenas para testes..
   },
 ];
