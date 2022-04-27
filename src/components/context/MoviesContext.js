@@ -5,10 +5,10 @@ import { StaticDataMovies } from "../../utils/StaticDataMovies";
 export const MoviesContext = createContext();
 
 export function MoviesContextProvider(props) {
-  const [DataMovies, setDataMovies] = useState(StaticDataMovies);
+  const [DataContextMovies, setDataContextMovies] = useState(StaticDataMovies);
 
   return (
-    <MoviesContext.Provider value={DataMovies}>
+    <MoviesContext.Provider value={{ DataContextMovies, setDataContextMovies }}>
       {props.children}
     </MoviesContext.Provider>
   );

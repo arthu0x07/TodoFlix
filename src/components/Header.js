@@ -24,7 +24,7 @@ const LogoContainer = styled.div`
   > img {
     width: auto;
     height: 48px;
-    filter: contrast(1.);
+    filter: contrast(1);
   }
 
   .Container-Header-Menu {
@@ -46,6 +46,16 @@ const LogoContainer = styled.div`
 
     :hover .Container-Categories {
       display: flex;
+    }
+
+    a {
+      opacity: 0.8;
+      transition: opacity ease 0.3s;
+
+      :hover {
+        opacity: 1;
+        transition: opacity ease 0.3s;
+      }
     }
   }
 
@@ -98,6 +108,14 @@ const ButtonAddFilm = styled.button`
   margin-right: 1rem;
 
   cursor: pointer;
+
+  opacity: 0.8;
+  transition: opacity ease 0.3s;
+
+  :hover {
+    opacity: 1;
+    transition: opacity ease 0.3s;
+  }
 `;
 
 const ContainerInput = styled.div`
@@ -147,7 +165,9 @@ export function Header() {
             </li>
             <li className="Container-Header-SelectItem">
               <a>Categorias</a>
-              <ul className="Container-Categories"> {/* Adicionar os Links aqui.. criar as rotas... */}
+              <ul className="Container-Categories">
+                {" "}
+                {/* Adicionar os Links aqui.. criar as rotas... */}
                 <li>Todos</li>
                 <li>Favoritos</li>
                 <li>Já vistos</li>

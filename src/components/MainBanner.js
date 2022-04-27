@@ -89,24 +89,26 @@ const ContainerNotes = styled.div`
   }
 `;
 
-export function MainBanner(props) {
-  console.log("props", props.SelectedBannerMovie);
+  // Props Estão chegando undefined...
 
-  const DataMovie = props.SelectedBannerMovie;
+export function MainBanner(props) {
+  const DataBannerMovie = props.SelectedBannerMovie;
 
   return (
     <Container>
       <ContainerImagem>
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${DataMovie.backdrop_path}`}
-        />
+        {/* <img
+          src={`https://image.tmdb.org/t/p/w500/${DataBannerMovie.backdrop_path}`}
+        /> */}
+
+        <img src={DataBannerMovie.static_path} />
       </ContainerImagem>
 
       <ContainerData>
         <LikedMovieItem src={IconLikedMovie} />
         <SubTitleMovie>Visto recentemente</SubTitleMovie>
-        <TitleMovie>{DataMovie.title}</TitleMovie>
-        <OverviewMovie>{DataMovie.overview}</OverviewMovie>
+        <TitleMovie>{DataBannerMovie.title}</TitleMovie>
+        <OverviewMovie>{DataBannerMovie.overview}</OverviewMovie>
 
         <ContainerNotes>
           <p>4/5</p> <img src={IconNoteMovieLike} />

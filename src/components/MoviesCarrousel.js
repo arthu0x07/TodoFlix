@@ -11,14 +11,11 @@ const Container = styled.section`
   margin-top: 4rem;
   margin-bottom: 4rem;
 
-
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-
-  // Vai virar um carrosel...7
 
   > h2 {
     position: absolute;
@@ -96,7 +93,11 @@ export function MoviesCarrousel({ DataFilms }) {
   const properties = {
     itemsToShow: 4.6,
     pagination: false,
+    enableAutoPlay: true,
+    autoPlaySpeed: 2000,
   };
+
+  console.log(DataFilms);
 
   return (
     <Container>

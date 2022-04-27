@@ -63,7 +63,19 @@ export function CardMovie({ ItemMovie }) {
 
   return (
     <Container className="Card-Container">
-      <img src={`https://image.tmdb.org/t/p/w500/${ItemMovie.backdrop_path}`} />
+      {(ItemMovie.static_path != undefined) |
+      (ItemMovie.static_path != null) ? (
+        <img src={ItemMovie.static_path} />
+      ) : (
+        (ItemMovie.static_path != undefined) |
+          (ItemMovie.static_path != null) && (
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${ItemMovie.backdrop_path}`}
+          />
+        )
+      )}
+
+      {/* <img src={`https://image.tmdb.org/t/p/w500/${ItemMovie.backdrop_path}`} /> */}
       <div>
         <h3>{FormatTexts(ItemMovie.title)}</h3>
         <div>
