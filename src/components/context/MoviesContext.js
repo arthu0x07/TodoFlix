@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useMemo } from "react";
 
 import { StaticDataMovies } from "../../utils/StaticDataMovies";
 
@@ -19,7 +19,7 @@ export function MoviesContextProvider(props) {
 
     console.log("Function SeTFaVMoviE (Not State) - pós", ListMovies[id]);
 
-    setDataContextMovies(ListMovies);
+    setDataContextMovies([...ListMovies]);
   }
 
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
-import { useContext } from "react";
 
+import { useContext } from "react";
 import { MoviesContext } from "./context/MoviesContext";
 
 import IconLikedMovie from "../assets/IconLikedMovie.png";
@@ -97,7 +97,9 @@ const ContainerNotes = styled.div`
 
 export function MainBanner(props) {
   const DataBannerMovie = props.SelectedBannerMovie;
-  const setFavMovie = useContext(MoviesContext);
+  const setFavMovie = props.setFavMovie;
+
+  console.log(DataBannerMovie.id);
 
   return (
     <Container>

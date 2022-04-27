@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
@@ -9,27 +9,23 @@ import { SortNumber } from "../../utils/RandomNumber";
 
 export function Home() {
   const MovieDataContext = useContext(MoviesContext);
-  const [DataFilms, setDataFilms] = useState();
+  const setFavMovie = MovieDataContext.setFavMovie;
+  const DataFilms = MovieDataContext.DataContextMovies;
   const [SelectedBannerMovie, setSelectedBannerMovie] = useState();
 
   useEffect(() => {
-    MovieDataContext.DataContextMovies &&
-      setDataFilms(MovieDataContext.DataContextMovies);
+    setSelectedBannerMovie(DataFilms[SortNumber(1, 4)]);
   }, []);
-
-
-  useEffect(() => {
-    if (DataFilms != undefined || DataFilms != null) {
-      setSelectedBannerMovie(DataFilms[SortNumber(0, 4)]);
-    }
-  }, [DataFilms]);
 
   return (
     <>
       <Wrapper>
         <Header />
         {SelectedBannerMovie && (
-          <MainBanner SelectedBannerMovie={SelectedBannerMovie} />
+          <MainBanner
+            SelectedBannerMovie={SelectedBannerMovie}
+            setFavMovie={setFavMovie}
+          />
         )}
         {DataFilms && <MoviesCarrousel DataFilms={DataFilms} />}
       </Wrapper>
