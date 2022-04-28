@@ -33,7 +33,7 @@ const Container = styled.section`
   }
 
   .rec-item-wrapper {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-left: 0.2rem;
     overflow: visible;
   }

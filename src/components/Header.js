@@ -84,6 +84,7 @@ const LogoContainer = styled.div`
     padding-top: 2rem;
     padding-bottom: 0;
     left: -0.8rem;
+    z-index: 1;
 
     li {
       margin-bottom: 1rem;
@@ -208,6 +209,3 @@ export function Header() {
     </Container>
   );
 }
-
-
-

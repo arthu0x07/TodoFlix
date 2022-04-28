@@ -1,10 +1,9 @@
 import styled from "styled-components/macro";
 
-import { useContext } from "react";
-import { MoviesContext } from "./context/MoviesContext";
+import { FavButton } from "./FavButton";
 
-import IconLikedMovie from "../assets/IconLikedMovie.png";
 import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
+import IconLikedMovie from "../assets/IconLikedMovie.png";
 
 const Container = styled.main`
   width: 100%;
@@ -50,7 +49,7 @@ const ContainerData = styled.div`
 
 const LikedMovieItem = styled.img`
   margin-bottom: 10px;
-
+  width: 25px;
   opacity: ${({ isFav }) => (isFav ? 1 : 0.2)};
 `;
 
@@ -108,12 +107,9 @@ export function MainBanner(props) {
       </ContainerImagem>
 
       <ContainerData>
-        <LikedMovieItem
-          src={IconLikedMovie}
-          onClick={() => {
-            setFavMovie(DataBannerMovie.id);
-          }}
+        <FavButton
           isFav={DataBannerMovie.user_liked}
+          DataFilms={DataBannerMovie}
         />
         <SubTitleMovie>Visto recentemente</SubTitleMovie>
         <TitleMovie>{DataBannerMovie.title}</TitleMovie>

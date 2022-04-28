@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+import { FavButton } from "../components/FavButton";
+
 import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
 
 const Container = styled.div`
@@ -15,18 +17,12 @@ const Container = styled.div`
 
   overflow: hidden;
 
-  > img {
-    width: 100%;
-    height: 148px;
-  }
-
   > div {
     width: 100%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
     min-height: 30px;
 
     h3 {
@@ -47,6 +43,26 @@ const Container = styled.div`
   }
 `;
 
+const ContainerImageCard = styled.div`
+  position: relative;
+  margin-bottom: 10px;
+
+  > img {
+    width: 100%;
+    height: 148px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .favorite-button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+  }
+`;
+
 const Overview = styled.p`
   font-size: 12px;
   margin-top: 10px;
@@ -64,18 +80,12 @@ export function CardMovie({ ItemMovie }) {
   return (
     <Container className="Card-Container">
       {(ItemMovie.static_path != undefined) |
-      (ItemMovie.static_path != null) ? (
-        <img src={ItemMovie.static_path} />
-      ) : (
-        (ItemMovie.static_path != undefined) |
-          (ItemMovie.static_path != null) && (
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${ItemMovie.backdrop_path}`}
-          />
-        )
+        (ItemMovie.static_path != null) && (
+        <ContainerImageCard>
+          <img src={ItemMovie.static_path} />
+          <FavButton isFav={ItemMovie.user_liked} DataFilms={ItemMovie} />
+        </ContainerImageCard>
       )}
-
-      {/* <img src={`https://image.tmdb.org/t/p/w500/${ItemMovie.backdrop_path}`} /> */}
       <div>
         <h3>{FormatTexts(ItemMovie.title)}</h3>
         <div>
