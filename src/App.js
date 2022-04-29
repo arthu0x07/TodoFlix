@@ -26,3 +26,16 @@ export function App() {
     </BrowserRouter>
   );
 }
+
+// O Modal será utilizado aqui, pois é o nível mais alto englobando todas as páginas.
+
+// O modal precisa de um state que será utilizado para definir se ele está aberto ou fechado, uma função para setar esse estádo como verdadeiro e outra pra setar como falso;
+
+// A função que irá setar como verdadeiro será utilizado por outros componentes para abrir esse modal.
+
+// A função de fechar será passado para o próprio modal e sera utilizada também por nos para fazer a opção de clicar no X e fechar...
+
+// Colocar essas funções e o estado no contexto é uma solução viável?
+
+// Colocando o componente do modal nos arquivos das páginas resultará na configuração do modal em todos os componentes de página, o que não é algo muito complexo de fazer, porém, resulta em multiplicação de código igual... Fora que, ainda assim, teremos que jogar as funções do modal no contexto, porém, o modal não ficará no mesmo arquivo que o provider deste contexto...
+

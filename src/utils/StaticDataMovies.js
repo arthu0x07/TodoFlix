@@ -118,7 +118,7 @@ export const StaticDataMovies = [
     overview:
       "Nos bastidores do show no Theatro Municipal de São Paulo, o rapper e ativista Emicida celebra o grande legado da cultura negra brasileira.",
     static_path: AmarElo,
-    backdrop_path: "",
+    backdrop_path: "",  
 
     vote_average: 4.4,
     user_liked: false,

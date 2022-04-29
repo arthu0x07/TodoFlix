@@ -32,6 +32,12 @@ const GlobalStyles = createGlobalStyle`
         overflow-y: visible;
         padding: 0 3.5rem;
     }
+
+    .content-modal{
+        width: 100%;
+        background-color: red;
+        height: 200px
+    }
 `;
 
 export default GlobalStyles;

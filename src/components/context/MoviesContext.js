@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useMemo } from "react";
+import { createContext, useState, useEffect } from "react";
 
 import { StaticDataMovies } from "../../utils/StaticDataMovies";
 
@@ -8,6 +8,16 @@ export function MoviesContextProvider(props) {
   const [DataContextMovies, setDataContextMovies] = useState(StaticDataMovies);
 
   const [DataContextSelectedMovie, setDataContextSelectedMovie] = useState();
+
+  const [isModalOpen, SetModalMovies] = useState(true);
+
+  function CloseModal() {
+    SetModalMovies(false);
+  }
+
+  function OpenModal() {
+    SetModalMovies(true);
+  }
 
   useEffect(() => {
     console.log("debug - contexto selected movie", DataContextSelectedMovie);
@@ -46,6 +56,9 @@ export function MoviesContextProvider(props) {
         setFavMovie,
         DataContextSelectedMovie,
         setSelectedMovie,
+        isModalOpen,
+        CloseModal,
+        OpenModal,
       }}
     >
       {props.children}
