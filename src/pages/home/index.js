@@ -9,12 +9,11 @@ import { SortNumber } from "../../utils/RandomNumber";
 
 export function Home() {
   const MovieDataContext = useContext(MoviesContext);
-  const setFavMovie = MovieDataContext.setFavMovie;
   const DataFilms = MovieDataContext.DataContextMovies;
   const [SelectedBannerMovie, setSelectedBannerMovie] = useState();
 
   useEffect(() => {
-    setSelectedBannerMovie(DataFilms[SortNumber(1, 4)]);
+    setSelectedBannerMovie(DataFilms[SortNumber(1, DataFilms.length)]);
   }, []);
 
   return (
@@ -22,13 +21,13 @@ export function Home() {
       <Wrapper>
         <Header />
         {SelectedBannerMovie && (
-          <MainBanner
-            SelectedBannerMovie={SelectedBannerMovie}
-            setFavMovie={setFavMovie}
-          />
+          <MainBanner SelectedBannerMovie={SelectedBannerMovie} />
         )}
         {DataFilms && <MoviesCarrousel DataFilms={DataFilms} />}
       </Wrapper>
     </>
   );
 }
+
+
+// Onde adicionar o Componente do Modal?

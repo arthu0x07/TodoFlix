@@ -1,6 +1,8 @@
 import styled from "styled-components/macro";
+import { useContext } from "react";
 
 import { FavButton } from "../components/FavButton";
+import { MoviesContext } from "../components/context/MoviesContext";
 
 import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
 
@@ -69,6 +71,8 @@ const Overview = styled.p`
 `;
 
 export function CardMovie({ ItemMovie }) {
+  const MovieDataContext = useContext(MoviesContext);
+
   function FormatTexts(title, Maxlimit = 18) {
     let limit = Maxlimit;
     let overlimit = title.length > limit;
@@ -77,11 +81,21 @@ export function CardMovie({ ItemMovie }) {
     return title.substring(0, limit) + dotOrEmpty;
   }
 
+  function setSelectedMovie(Movie) {
+    MovieDataContext.setSelectedMovie(Movie.id);
+
+    // Chamar função para abrir o modal... Criar função no contexto e chamar aqui... Configurar o modal na index da home...
+  }
+
   return (
     <Container className="Card-Container">
       {(ItemMovie.static_path != undefined) |
         (ItemMovie.static_path != null) && (
-        <ContainerImageCard>
+        <ContainerImageCard
+          onClick={() => {
+            setSelectedMovie(ItemMovie);
+          }}
+        >
           <img src={ItemMovie.static_path} />
           <FavButton isFav={ItemMovie.user_liked} DataFilms={ItemMovie} />
         </ContainerImageCard>
@@ -96,5 +110,3 @@ export function CardMovie({ ItemMovie }) {
     </Container>
   );
 }
-
-// Fazer parte visual do card.

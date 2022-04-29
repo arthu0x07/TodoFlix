@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 import { FavButton } from "./FavButton";
 
 import IconNoteMovieLike from "../assets/IconNoteMovieLike.png";
-import IconLikedMovie from "../assets/IconLikedMovie.png";
 
 const Container = styled.main`
   width: 100%;
@@ -96,13 +95,10 @@ const ContainerNotes = styled.div`
 
 export function MainBanner(props) {
   const DataBannerMovie = props.SelectedBannerMovie;
-  const setFavMovie = props.setFavMovie;
-
-  console.log(DataBannerMovie.id);
 
   return (
     <Container>
-      <ContainerImagem>
+      <ContainerImagem onClick={() => console.log('testing')}>
         <img src={DataBannerMovie.static_path} />
       </ContainerImagem>
 
@@ -125,3 +121,5 @@ export function MainBanner(props) {
 
 // Puxar o contexto, atribuir a função no botão de curtido...
 // Passar a props do ID do filme pelo seu index...
+
+// Adicionar funcionalidade de setar item selecionado aqui no banner tambem.

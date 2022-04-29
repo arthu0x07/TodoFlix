@@ -123,6 +123,6 @@ export const StaticDataMovies = [
     vote_average: 4.4,
     user_liked: false,
     already_seen: true,
-    recently_added: true, // True apenas para testes..
+    recently_added: true, // True apenas para testes... Após a criação do Modal definir a funcionalidade de adicionado recentemente apenas nos itens inseridos a partir do botão "Adicionar Filme".
   },
 ];

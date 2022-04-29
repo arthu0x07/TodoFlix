@@ -98,8 +98,6 @@ const LogoContainer = styled.div`
   }
 `;
 
-// ----------------------------------------------
-
 const InputContainer = styled.div`
   display: flex;
   justify-content: flex-start;

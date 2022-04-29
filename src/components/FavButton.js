@@ -27,9 +27,3 @@ export function FavButton(props) {
     />
   );
 }
-
-// Chamar o context aqui e consumir os itens necessários e alterar a nomeclatura de DataBannerMovie para so DataMovie...
-
-// As informações dos filmes ele deve pegar por propriedade, so deve pegar do contexto a função de atualizar
-
-// Adicionar no mainBanner

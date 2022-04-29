@@ -90,6 +90,10 @@ const Container = styled.section`
 `;
 
 export function MoviesCarrousel({ DataFilms }) {
+  function setSelectedMovie(Movie) {
+    console.log(Movie);
+  }
+
   const properties = {
     itemsToShow: 4.6,
     pagination: false,
@@ -103,9 +107,22 @@ export function MoviesCarrousel({ DataFilms }) {
 
       <Carousel {...properties}>
         {DataFilms.map((Movie) => {
-          return <CardMovie ItemMovie={Movie} />;
+          return (
+            <CardMovie
+              ItemMovie={Movie}
+              onClick={() => {
+                setSelectedMovie(Movie);
+              }}
+            />
+          );
         })}
       </Carousel>
     </Container>
   );
 }
+
+// Passar um estádo e uma função de marcação de estádo da página Home para o Carrousel e depois para o Card...
+
+// Quando clicarmos em um card ativamos o modal e o modal irá consumir as informações daquele estádo...
+
+// Fazer um contexto -> Jogar o estádo do filme selecionado lá dentro -> Consumir no componente do modal e nos cardsMovies adicionar um onClick ativando o modal e setando o filme selecionado no contexto.

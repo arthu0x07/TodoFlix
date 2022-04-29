@@ -7,6 +7,12 @@ export const MoviesContext = createContext();
 export function MoviesContextProvider(props) {
   const [DataContextMovies, setDataContextMovies] = useState(StaticDataMovies);
 
+  const [DataContextSelectedMovie, setDataContextSelectedMovie] = useState();
+
+  useEffect(() => {
+    console.log("debug - contexto selected movie", DataContextSelectedMovie);
+  }, [DataContextSelectedMovie]);
+
   useEffect(() => {
     console.log("Debbug Liked Feature");
     console.log(DataContextMovies);
@@ -22,9 +28,25 @@ export function MoviesContextProvider(props) {
     setDataContextMovies([...ListMovies]);
   }
 
+  function setSelectedMovie(id) {
+    // Vai pegar o ID do card lá -> check
+    // Vai buscar no estado dos filmes gerais -> check
+    // Vai setar as informações dele no contexto DAtaContextSelectedMovie -> check
+    // Tendo isso, consumiremos o esste contexto no modal ;) ----> Fazer o modal.
+
+    let SelectedMovie = DataContextMovies[id];
+    setDataContextSelectedMovie(SelectedMovie);
+  }
+
   return (
     <MoviesContext.Provider
-      value={{ DataContextMovies, setDataContextMovies, setFavMovie }}
+      value={{
+        DataContextMovies,
+        setDataContextMovies,
+        setFavMovie,
+        DataContextSelectedMovie,
+        setSelectedMovie,
+      }}
     >
       {props.children}
     </MoviesContext.Provider>
