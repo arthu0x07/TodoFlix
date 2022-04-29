@@ -12,7 +12,7 @@ import { SortNumber } from "../../utils/RandomNumber";
 export function Home() {
   const MovieDataContext = useContext(MoviesContext);
   const DataFilms = MovieDataContext.DataContextMovies;
-  
+
   const [SelectedBannerMovie, setSelectedBannerMovie] = useState();
 
   useEffect(() => {
@@ -27,10 +27,13 @@ export function Home() {
           <MainBanner SelectedBannerMovie={SelectedBannerMovie} />
         )}
         {DataFilms && <MoviesCarrousel DataFilms={DataFilms} />}
-        <MoviesModal isOpen={MovieDataContext.isModalOpen} onRequestClose={MovieDataContext.CloseModal} />
+        <MoviesModal
+          isOpen={MovieDataContext.isModalOpen}
+          onRequestClose={MovieDataContext.CloseModal}
+        />
       </Wrapper>
     </>
   );
 }
 
-// Onde adicionar o Componente do Modal?
+// Copiar a linha do Modal nas outras páginas e levar a chamada dos contextos tambem.

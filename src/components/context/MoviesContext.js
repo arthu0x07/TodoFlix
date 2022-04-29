@@ -7,9 +7,9 @@ export const MoviesContext = createContext();
 export function MoviesContextProvider(props) {
   const [DataContextMovies, setDataContextMovies] = useState(StaticDataMovies);
 
-  const [DataContextSelectedMovie, setDataContextSelectedMovie] = useState();
+  const [DataContextSelectedMovie, setDataContextSelectedMovie] = useState({});
 
-  const [isModalOpen, SetModalMovies] = useState(true);
+  const [isModalOpen, SetModalMovies] = useState(false);
 
   function CloseModal() {
     SetModalMovies(false);

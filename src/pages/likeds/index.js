@@ -4,6 +4,8 @@ import { Header } from "../../components/Header";
 import { MoviesContext } from "../../components/context/MoviesContext";
 import { ContainerCards } from "../../components/ContainerCard";
 import { CardMovie } from "../../components/CardMovie";
+import { Wrapper } from "../../components/Wrapper";
+import { MoviesModal } from "../../components/MoviesModal";
 
 export function Likeds() {
   const MovieDataContext = useContext(MoviesContext);
@@ -19,15 +21,21 @@ export function Likeds() {
 
   return (
     <>
-      <Header />
-      <ContainerCards title="Curtidos">
-        {(DataFilms != null) | (DataFilms != undefined) &&
-          DataFilms.map((Movie) => {
-            if(Movie.user_liked == true){
-              return <CardMovie ItemMovie={Movie} />;
-            }
-          })}
-      </ContainerCards>
+      <Wrapper>
+        <Header />
+        <ContainerCards title="Curtidos">
+          {(DataFilms != null) | (DataFilms != undefined) &&
+            DataFilms.map((Movie) => {
+              if (Movie.user_liked == true) {
+                return <CardMovie ItemMovie={Movie} />;
+              }
+            })}
+        </ContainerCards>
+        <MoviesModal
+          isOpen={MovieDataContext.isModalOpen}
+          onRequestClose={MovieDataContext.CloseModal}
+        />
+      </Wrapper>
     </>
   );
 }

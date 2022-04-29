@@ -83,6 +83,7 @@ export function CardMovie({ ItemMovie }) {
 
   function setSelectedMovie(Movie) {
     MovieDataContext.setSelectedMovie(Movie.id);
+    MovieDataContext.OpenModal();
 
     // Chamar função para abrir o modal... Criar função no contexto e chamar aqui... Configurar o modal na index da home...
   }

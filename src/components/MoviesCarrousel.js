@@ -107,14 +107,7 @@ export function MoviesCarrousel({ DataFilms }) {
 
       <Carousel {...properties}>
         {DataFilms.map((Movie) => {
-          return (
-            <CardMovie
-              ItemMovie={Movie}
-              onClick={() => {
-                setSelectedMovie(Movie);
-              }}
-            />
-          );
+          return <CardMovie ItemMovie={Movie} />;
         })}
       </Carousel>
     </Container>

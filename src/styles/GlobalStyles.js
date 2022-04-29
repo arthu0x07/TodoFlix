@@ -33,10 +33,46 @@ const GlobalStyles = createGlobalStyle`
         padding: 0 3.5rem;
     }
 
-    .content-modal{
+    .ReactModalPortal{
         width: 100%;
-        background-color: red;
-        height: 200px
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-modal{
+        width: 422px;
+        height: 527px;
+        background-color: #000000;
+
+        padding: 43px;
+
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 10%;
+
+        border: 1px solid #ffffff1f;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        color: #ffffff;
+    }
+
+    .overlay-modal{
+        background: #0000003f;
+        width: 100%;
+        height: 100%;
+
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 0%;
     }
 `;
 

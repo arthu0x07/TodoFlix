@@ -53,6 +53,7 @@ const LikedMovieItem = styled.img`
 `;
 
 const SubTitleMovie = styled.h3`
+  margin-top: 10px;
   margin-bottom: 10px;
 
   font-size: 16px;
@@ -98,7 +99,7 @@ export function MainBanner(props) {
 
   return (
     <Container>
-      <ContainerImagem onClick={() => console.log('testing')}>
+      <ContainerImagem onClick={() => console.log("testing")}>
         <img src={DataBannerMovie.static_path} />
       </ContainerImagem>
 

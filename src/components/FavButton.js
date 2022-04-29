@@ -1,12 +1,13 @@
 import { useContext } from "react";
-
 import styled from "styled-components/macro";
-import IconLikedMovie from "../assets/IconLikedMovie.png";
 
 import { MoviesContext } from "../components/context/MoviesContext";
 
+import IconLikedMovie from "../assets/IconLikedMovie.png";
+
 const LikedMovieItem = styled.img`
-  margin-bottom: 10px;
+  width: 22px;
+  height: 22px;
   opacity: ${({ isFav }) => (isFav ? 1 : 0.2)};
 `;
 
