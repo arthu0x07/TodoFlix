@@ -59,7 +59,6 @@ const ContainerNotesMovie = styled.div`
 
 export function MoviesModal(props) {
   const SelectedMovieData = useContext(MoviesContext).DataContextSelectedMovie;
-  console.log("DataMovieModal", SelectedMovieData);
 
   return (
     <Modal

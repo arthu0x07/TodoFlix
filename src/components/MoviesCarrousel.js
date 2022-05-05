@@ -90,10 +90,6 @@ const Container = styled.section`
 `;
 
 export function MoviesCarrousel({ DataFilms }) {
-  function setSelectedMovie(Movie) {
-    console.log(Movie);
-  }
-
   const properties = {
     itemsToShow: 4.6,
     pagination: false,
