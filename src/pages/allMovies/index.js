@@ -11,23 +11,38 @@ export function AllMovies() {
   const MovieDataContext = useContext(MoviesContext);
 
   const [DataFilms, setDataFilms] = useState();
+  const [QueryMovies, setQueryMovies] = useState();
 
   useEffect(() => {
     MovieDataContext.DataContextMovies &&
       setDataFilms(MovieDataContext.DataContextMovies);
   }, []);
 
+  useEffect(() => {
+    console.log("debug - querymovies ", QueryMovies);
+  }, [QueryMovies]);
+
   console.log("Todos", MovieDataContext.DataContextMovies);
 
   return (
     <>
       <Wrapper>
-        <Header />
+        <Header setQueryMovies={setQueryMovies} />
         <ContainerCards title="Todos">
-          {(DataFilms != null) | (DataFilms != undefined) &&
-            DataFilms.map((Movie) => {
-              return <CardMovie ItemMovie={Movie} />;
-            })}
+          {QueryMovies == undefined || QueryMovies == null || QueryMovies == ""
+            ? (DataFilms != null) | (DataFilms != undefined) &&
+              DataFilms.map((Movie) => {
+                return <CardMovie ItemMovie={Movie} />;
+              })
+            : DataFilms.map((Movie) => {
+                if (
+                  Movie.title
+                    .toLowerCase()
+                    .includes(QueryMovies.toLocaleLowerCase())
+                ){
+                  return <CardMovie ItemMovie={Movie} />;
+                }
+              })}
         </ContainerCards>
         <MoviesModal
           isOpen={MovieDataContext.isModalOpen}

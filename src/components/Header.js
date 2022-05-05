@@ -162,7 +162,7 @@ const ContainerProfilePhoto = styled.div`
   cursor: pointer;
 `;
 
-export function Header() {
+export function Header(props) {
   return (
     <Container>
       <LogoContainer>
@@ -197,7 +197,7 @@ export function Header() {
       <InputContainer>
         <ButtonAddFilm>Adicionar Filme</ButtonAddFilm>
         <ContainerInput>
-          <input type="text" placeholder="Pesquisar" />
+          <input type="text" placeholder="Pesquisar" onChange={(e) => {props.setQueryMovies(e.target.value)}}/>
         </ContainerInput>
         <ContainerProfilePhoto>
           <img src={IconProfilePurple} />
